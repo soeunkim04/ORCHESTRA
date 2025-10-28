@@ -1,0 +1,86 @@
+/* joke.css */
+
+body {
+    display: flex; 
+    flex-direction: column;
+    
+    /* body는 뷰포트 높이에 맞게 설정 */
+    min-height: 100vh;
+    height: 100vh;
+    
+    background-color: transparent; 
+    
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    
+    /* body의 기본 스크롤은 숨김 */
+    overflow-y: hidden; 
+    
+    color: black;
+}
+
+.joke-content-wrapper {
+    /* ⭐ 핵심: 이미지 높이(25vw)만큼을 뺀 영역을 콘텐츠 영역으로 사용 ⭐ */
+    /* ⚠️ 25vw는 종횡비 4:1 가정 값입니다. 실제 이미지에 맞춰 수정해야 합니다. */
+    height: calc(100vh - 25vw); 
+    
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    padding-top: 0; 
+    padding-bottom: 0; 
+
+    /* 상단 콘텐츠가 길어질 경우 스크롤 허용 */
+    overflow-y: auto; 
+    
+    background-color: transparent; 
+}
+    
+/* 🖼️ 화면 전체 하단에 위치하도록 설정 */
+.bottom-image {
+    position: fixed;
+    bottom: 0; 
+    
+    /* 이미지 가로 길이를 항상 화면 가로 길이(100vw)와 동일하게 설정 */
+    width: 100%; 
+    
+    /* ⭐ 수정: 높이를 auto로 설정하여 잘림 방지 (object-fit: contain과 함께 사용) ⭐ */
+    height: auto; 
+    
+    /* 이미지의 최소 높이를 25vw로 설정하여 .joke-content-wrapper와 높이를 맞춤 */
+    min-height: 25vw; 
+
+    /* ⭐ 이미지 내용이 잘리지 않도록 설정 ⭐ */
+    object-fit: contain; 
+    
+    /* 배경이 남는 부분은 투명하게 처리됩니다. */
+    
+    left: 0;
+    transform: none; 
+    
+    /* 이미지가 콘텐츠 위에 겹치지 않도록 z-index 설정 */
+    z-index: 1; 
+}
+
+/* 텍스트 관련 스타일 (변경 없음) */
+.page-title, .additional-info, .absurd-text-container, .normal-paragraph-container {
+    position: relative; 
+    z-index: 3;
+    color: black; 
+    background-color: transparent; 
+}
+
+.additional-info, 
+.absurd-text-container, 
+.normal-paragraph-container {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: black;
+}
+

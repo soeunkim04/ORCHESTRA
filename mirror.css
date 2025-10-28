@@ -1,0 +1,132 @@
+/* page1.css */
+
+html {
+        height: 100%;
+        /* 스크롤 영역 확보 */
+        overflow-y: scroll; 
+    }
+    
+    body {
+        
+        background-color: rgb(255, 255, 255);
+        overflow-x: hidden;
+        position: relative;
+        margin: 0;
+        
+        /* ⚠️ [필수]: 스크롤 이벤트 발생을 위한 최소 높이 설정 */
+        min-height: 1000vh; 
+        height: auto; 
+        width: 100vw;
+        
+        /* 텍스트가 없으므로 body의 배경 이미지는 제거 */
+        background-image: none; 
+    }
+
+
+#background-image-flipper {
+        position: fixed; /* 뷰포트에 고정 */
+        top: 50%;       /* ⚠️ 추가: 상단 50% 위치 */
+        left: 50%;      /* ⚠️ 추가: 왼쪽 50% 위치 */
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; 
+    
+        /* 이미지 설정 유지 */
+        background-image: url('images/mirror/main.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center center;
+    
+        transform: translate(-50%, -50%); 
+    transform-origin: center;
+}
+
+/* ⚠️ [수정]: 180도 회전 적용 (기존 translate 유지하며 회전만 추가) */
+#background-image-flipper.flipped {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+
+#left-side-image {
+        --animation-speed: 15s;
+        position: fixed; /* 스크롤에 관계없이 뷰포트에 고정 */
+        
+        /* 뷰포트 높이 전체 (화면을 세로로 꽉 채움) */
+        height: 100vh; 
+        /* 뷰포트 너비 절반 (왼쪽을 꽉 채움) */
+        width: 28vw; 
+        
+        /* 텍스트나 다른 요소보다 뒤로 배치 */
+        z-index: -2; /* 기존 flipper(-1)보다 더 뒤로 보냄 */
+    
+        /* 배경 이미지 설정 */
+        background-image: url('images/mirror/side.png'); 
+        
+        /* ⚠️ [수정]: 이미지 크기를 DIV 높이에 맞추고 너비는 자동 계산 */
+    background-size: auto 120vh; 
+    
+    /* ⚠️ [수정]: 반복 설정을 vertical-repeat으로 명시 */
+    background-repeat: repeat-y; 
+    background-position: center top; 
+    
+    /* 15초 동안 선형(일정 속도)으로 무한 반복 */
+    animation: slideDown var(--animation-speed) linear infinite; 
+}
+/* ⚠️ [수정]: 애니메이션 키프레임 정의 */
+@keyframes slideDown {
+        0% {
+            background-position-y: 0; /* 맨 위에서 시작 */
+        }
+        100% {
+            background-position-y: 120vh; /* 이미지 높이만큼 아래로 이동 */
+        }
+    }
+
+
+#right-side-image {
+        --animation-speed: 15s;
+        position: fixed; /* 스크롤에 관계없이 뷰포트에 고정 */
+        top: 0;
+        right: 0;
+        
+        /* 뷰포트 높이 전체 (화면을 세로로 꽉 채움) */
+        height: 100vh; 
+        /* 뷰포트 너비 절반 (왼쪽을 꽉 채움) */
+        width: 28vw; 
+        
+        /* 텍스트나 다른 요소보다 뒤로 배치 */
+        z-index: -2; /* 기존 flipper(-1)보다 더 뒤로 보냄 */
+    
+        /* 배경 이미지 설정 */
+        background-image: url('images/mirror/side.png'); 
+        
+        /* ⚠️ [수정]: 이미지 크기를 DIV 높이에 맞추고 너비는 자동 계산 */
+    background-size: auto 120vh; 
+    
+    /* ⚠️ [수정]: 반복 설정을 vertical-repeat으로 명시 */
+    background-repeat: repeat-y; 
+    background-position: center top; 
+    
+    /* 15초 동안 선형(일정 속도)으로 무한 반복 */
+    animation: slideUp var(--animation-speed) linear infinite;
+}
+
+/* ⚠️ [추가]: slideUp (아래 -> 위) 키프레임 */
+@keyframes slideUp {
+        0% {
+            background-position-y: 120vh; /* 아래에서 시작 */
+        }
+        100% {
+            background-position-y: 0; /* 맨 위로 이동 */
+        }
+    }
+
+    .orchestra-return {
+        position: fixed; /* 뷰포트(화면)에 고정 */
+        top: 7vw;        /* 위에서 2vw 떨어진 위치 */
+        left: 48.5vw;      /* 오른쪽에서 2vw 떨어진 위치 */
+        width: 1.5vw;     /* 이미지 너비 (예시) */
+        height: auto;
+        cursor: pointer;
+        z-index: 1000;   /* 다른 요소 위에 표시 */
+    }

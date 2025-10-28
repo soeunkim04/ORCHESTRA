@@ -1,0 +1,437 @@
+/* style.css */
+
+
+
+body {
+    background-color: rgb(255, 255, 255);/* overflow-x: hidden; 을 사용하면 좌우 스크롤바가 사라지지만, */
+    /* 뷰포트 단위 사용 시 화면 크기에 맞추는 것이 더 좋습니다. */
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    min-height: 100vh; /* 최소 높이 유지 */
+    /* ⚠️ 모든 픽셀 값을 뷰포트 너비(vw)로 변환했습니다. */
+    }
+    
+    
+    
+    body::-webkit-scrollbar {
+    /* 스크롤바의 너비를 0으로 설정하여 숨깁니다. */
+    width: 0;
+    height: 0;
+    }
+    
+    
+    /* 모든 위치 지정 이미지에 공통으로 적용될 기본 스타일 */
+    
+    .positioned-image {
+    position: absolute;
+    /* max-width: 90%; 대신 vw를 사용합니다. */
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+
+    transform: scale(1.0);
+    }
+    
+    
+    .Title {
+    top: 5vw; /* 70px -> 약 5vw */
+    left: 34vw; /* 320px -> 약 23vw */
+    width: 30vw; /* 700px -> 약 50vw */
+    }
+    .Piccolo{
+    top: 14vw;
+    left: 5vw;
+    width: 1vw;
+    }
+    .Glockenspiel {
+    top: 14vw;
+    left: 85vw; /* 1200px -> 약 85vw */
+    width: 2vw;
+    }
+    .Harp {
+    top: 18vw;
+    left: 52vw;
+    width: 27vw;
+    }
+    .Bassoon {
+    top: 140vw; /* 1970px -> 약 140vw */
+    left: 63vw;
+    width: 5vw;
+    }
+    .Violin {
+    top: 31vw;
+    left: 39vw;
+    width: 7vw;
+    }
+    .Belltree {
+    top: 166vw;
+    left: 41vw;
+    width: 6vw;
+    }
+    .Vibraphone {
+    top: 33vw;
+    right: 6vw; /* right 속성도 vw로 변환 */
+    width: 4vw;
+    }
+    .Saxophone0 {
+    top: 130vw;
+    left: 18vw;
+    width: 5vw;
+    }
+    .Saxophone {
+    top: 107vw;
+    left: 18vw;
+    width: 4vw;
+    }
+    .Saxophone2 {
+    top: 57vw;
+    left: 18vw;
+    width: 5vw;
+    }
+    .SnareDrum {
+    top: 193vw;
+    left: 21vw;
+    width: 5vw;
+    }
+    .Sleighbells {
+    top: 166vw;
+    left: 56vw;
+    width: 3vw;
+    }
+    .Xylophone {
+    top: 48vw;
+    left: 12vw;
+    width: 1vw;
+    }
+    .Cymbals {
+    top: 178vw;
+    left: 84vw;
+    width: 6vw;
+    }
+    .Organ {
+    top: 61vw;
+    left: 78vw;
+    width: 13vw;
+    }
+    .Oboe {
+    top: 68vw;
+    left: 5vw;
+    width: 3vw;
+    }
+    .Windchime {
+    top: 166vw;
+    left: 71vw;
+    width: 4vw;
+    }
+    .Cello {
+    top: 101vw;
+    left: 64vw;
+    width: 12vw;
+    }
+    .DoubleBass {
+    top: 119vw;
+    left: 75vw;
+    width: 20vw;
+    }
+    .Clarinet0 {
+    top: 93vw;
+    left: 39vw;
+    width: 4vw;
+    }
+    .Clarinet {
+    top: 40vw;
+    left: 28vw;
+    width: 3vw;
+    }
+    .Clarinet2 {
+    top: 21vw;
+    left: 18vw;
+    width: 4vw;
+    }
+    .Tuba {
+    top: 128vw;
+    left: 50vw;
+    width: 6vw;
+    }
+    .Trumpet {
+    top: 85vw;
+    left: 25vw;
+    width: 3vw;
+    }
+    .Trombone {
+    top: 117vw;
+    left: 43vw;
+    width: 4vw;
+    }
+    .Timpani {
+    top: 178vw;
+    left: 40vw;
+    width: 7vw;
+    }
+    .Flute {
+    top: 36vw;
+    left: 5vw;
+    width: 2vw;
+    }
+    .Piano {
+    top: 85vw;
+    left: 5vw;
+    width: 3vw;
+    }
+    .Horn {
+    top: 71vw;
+    left: 32vw;
+    width: 5vw;
+    }
+    .Castanets {
+    top: 178vw;
+    left: 5vw;
+    width: 1vw;
+    }
+    .BassDrum {
+    top: 193vw;
+    left: 11vw;
+    width: 4vw;
+    }
+    .Tamtam {
+    top: 193vw;
+    left: 85vw;
+    width: 5vw;
+    }
+    .Tambourine {
+    top: 178vw;
+    left: 22vw;
+    width: 4vw;
+    }
+    .Triangle {
+    top: 166vw;
+    left: 85vw;
+    width: 3vw;
+    }
+    .Marimba {
+    top: 46vw;
+    left: 71vw;
+    width: 5vw;
+    }
+    .Viola {
+    top: 80vw;
+    left: 53vw;
+    width: 9vw;
+    }
+    
+    /* Joke 패널 컨테이너의 기본 스타일 */
+    #joke-panel-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; 
+        
+        background-color: transparent; 
+        
+        z-index: 999; 
+        
+        transition: transform 0.5s ease-out; 
+        pointer-events: none; /* 악기 클릭 전에는 클릭 방지 */
+    
+        overflow: hidden;
+        }
+        
+    /* ⚠️ [복구]: Joke 패널 활성화 상태 (70vh 위치) */
+    #joke-panel-container.active {
+        transform: translateY(50vh);
+        pointer-events: auto; /* 활성화되면 클릭 이벤트 처리 가능 */
+        }
+    
+    
+    
+    /* iframe 스타일링 */
+    #joke-iframe {
+        width: 100%;
+        
+        /* ⚠️ [수정]: 높이를 100vh로 복구 */
+        height: 100vh; 
+        
+        border: none;
+        
+        /* ⚠️ [수정]: 스크롤 숨김 제거 (joke.css에서 제어) */
+        overflow: hidden; 
+    
+    /* ⚠️ 핵심: iframe을 위로 50vh 이동시켜, 내용의 윗부분을 숨기고 아랫부분만 보이게 함 */
+    
+    transform: translateY(-50vh);
+transition: transform 0.5s ease-out;}
+
+#joke-panel-container.full-screen {
+    transform: translateY(0); /* 전체 창이 보이도록 최상단(0)으로 이동 */
+}
+#joke-panel-container.full-screen #joke-iframe {
+    transform: translateY(0); /* iframe 내용도 제자리에 (윗부분 50%가 보이도록) */
+}
+/* ⚠️ [새로 추가]: 악기 패널 스타일링 */
+/* ------------------------------------------- */
+.instrument-panel {
+    /* ⚠️ [확인]: 스크롤에 관계없이 화면 상단에 고정되어야 함 */
+    position: fixed;
+    /* script.js에서 설정한 CSS 변수를 사용 (유지) */
+    top: var(--panel-top);
+    left: var(--panel-left);
+    width: var(--panel-width);
+    height: var(--panel-height);
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    /* ⚠️ [수정]: z-index는 Joke 패널(999) 위에 뜨도록 1000으로 유지 */
+    z-index: 1000;
+    overflow: hidden;
+    background-color: rgb(255, 243, 193);
+}
+.instrument-panel .panel-image {
+    /* ⚠️ [수정]: 이미지를 창 크기보다 살짝 작게 (예: 90%) 설정 */
+    width: 80%;
+    height: 80%;
+    /* 이미지 비율을 유지하면서 90% 크기에 맞춤 */
+    object-fit: contain;
+}
+
+/* ✅ [총 (Gun) 애니메이션 추가] */
+/* ------------------------------------------- */
+
+/* ⭐ [복구]: 360도 회전 Keyframes (호버 시 사용) ⭐ */
+@keyframes spin-360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 1. Keyframes 정의: -3도에서 3도로 회전하는 애니메이션 */
+@keyframes gun-swing {
+    0% {
+        /* 초기 상태: 스케일(기존 애니메이션)과 회전(-3도) */
+        transform: scale(1.0) rotate(-10deg);
+    }
+    50% {
+        /* 중간 상태: 중앙 회전(3도) */
+        transform: scale(1.0) rotate(6deg);
+    }
+    100% {
+        /* 종료 상태: 다시 초기 상태(-3도) */
+        transform: scale(1.0) rotate(-6deg);
+    }
+}
+
+/* ⚠️ [새로 추가]: 총 장전 애니메이션 Keyframes 정의 */
+@keyframes gun-load-animation {
+    0% {
+        transform: translateX(0) scale(1.0); /* 초기 위치: X축 이동 없음 */
+    }
+    25% {
+        transform: translateX(10px) scale(1.0); /* 오른쪽으로 살짝 이동 (10px 예시) */
+    }
+    50% {
+        transform: translateX(-10px) scale(1.0); /* 왼쪽으로 살짝 이동 (-10px 예시) */
+    }
+    75% {
+        transform: translateX(5px) scale(1.0); /* 약간 복귀하는 느낌 */
+    }
+    100% {
+        transform: translateX(0) scale(1.0); /* 원래 위치로 복귀 */
+    }
+}
+
+
+
+
+
+
+/* 2. .Gun 클래스에 애니메이션 적용 */
+.Gun {
+    /* 기존 위치 및 크기 유지 */
+    top: 48vw;
+    left: 49vw;
+    width: 20vw;
+    
+    transform-origin: 50% 50%; 
+
+    animation: gun-swing 2s ease-in-out infinite alternate;
+
+    transition: transform 0.1s ease-out; /* 부드러운 전환을 위한 트랜지션 추가 */
+}
+
+.Gun:hover {
+    animation-play-state: paused; 
+    animation: spin-360 1s linear infinite;
+}
+
+.Gun.loading {
+    /* 기본 애니메이션 일시 정지 */
+    animation-play-state: paused; 
+    
+    /* 장전 애니메이션 실행 (한 번만) */
+    animation: gun-load-animation 0.4s ease-out 1 !important;
+    
+    /* 애니메이션 종료 후 원래 상태로 돌아가도록 설정 */
+    animation-fill-mode: none; 
+}
+
+.Gun.stop-all {
+    /* 자동 스윙 애니메이션 정지 */
+    animation-play-state: paused !important; 
+    
+    /* 호버 효과를 무력화 (CSS 우선순위 확보) */
+    pointer-events: none; 
+    
+    /* 장전 애니메이션 종료 후 최종 transform 값으로 고정 */
+    transform: rotate(0deg) translateX(0) scale(1.0) !important; 
+
+    /* 어떤 애니메이션도 실행되지 않도록 강제 */
+    animation: none !important;
+}
+
+/* 호버 효과는 .stop-all에 의해 무시되어야 합니다. */
+.Gun.stop-all:hover {
+    animation: none !important;
+}
+
+/* ------------------------------------------- */
+/* ✅ [Piano 상하 왕복 애니메이션] */
+/* ------------------------------------------- */
+
+/* Piano 상하 왕복 애니메이션 정의 */
+@keyframes pianoFloat {
+    0% {
+        /* ✅ 최상단 (Piccolo Y 좌표) */
+        /* Piano 위치(85vw)를 기준으로 71vw 위로 이동 */
+        /* 이제 position: absolute를 사용하므로, 스크롤해도 이 translateY 값은 문서 좌표를 기준으로 움직입니다. */
+        transform: translateY(-71vw) scale(1.0); 
+    }
+    100% {
+        /* ✅ 최하단 (새로운 목표 Y 좌표 100vw까지) */
+        /* Piano 위치(85vw)를 기준으로 15vw 아래로 이동 */
+        transform: translateY(60vw) scale(1.0); 
+    }
+}
+
+
+/* Piano 이미지에 애니메이션 적용 */
+.Piano {
+    /* ⚠️ [수정]: position: absolute로 복귀 (스크롤을 따라 움직이도록) */
+    position: absolute; 
+    
+    /* 기존 위치 유지 (X/Y 좌표 고정) */
+    top: 85vw;
+    left: 5vw;
+    width: 3vw;
+    height: auto;
+    
+    /* 애니메이션 적용: 15초 동안 부드럽게(ease-in-out) 무한 왕복(alternate) */
+    animation: pianoFloat 15s ease-in-out infinite alternate; 
+    
+    /* 마우스 애니메이션 충돌 방지 */
+    transform: scale(1.0); 
+    z-index: 10;
+}

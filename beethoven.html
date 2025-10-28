@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ORCHESTRA</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./beethoven.css">
+    </head>
+    <body>
+        <div id="top-text-container">
+            <span id="text-left">엘리제를 위하여</span>
+            <span id="text-right">8분의 3박자</span>
+        </div>
+
+        <div id="bottom-container">
+            <div class="text-column" id="column-1">
+                <p>음악 속 박자를 묶어 세는 박절이 있는데 엘리제를 위하여는 3박자로 이루어져 있기에 자연스레 3박자 곡으로 인식하게 된다. 박자가 일정해야 안정적인 선율로 인식하게 되고 그렇지 않으면 불안정하게 느끼게 되는데 엘리제를 위하여는 2번째 마디부터 음악이 본격적으로 시작되고, 2마디로 수식되는 첫번째 마디의 선율이 엘리제를 위하여라는 곡의 시작을 흥미롭게 만들어 주게 된다.</p>
+            </div>
+            <div class="text-column" id="column-2">
+                <p>그 이유는 모두가 다 똑같은 박자로 두지 않음으로서 곡의 시작을 흥미롭고도 재밌게 해주며 두번째 마디를 강조해주게 되고, 중간중간 흐트러뜨려 곡을 지루하지 않게 해주기 때문이다.</p>
+            </div>
+            <div class="text-column" id="column-3">
+                <p>반복되는 섹션이 많은 곡은 끝이라는 느낌을 내주기 어려운데 베토벤은 단 하나의 음만 다른 음으로 바꿔 세련되고 절제된 끝을 만들어 내기도 한다는 점에서 베토벤의 천재성을 알아볼 수 있다.</p>
+            </div>
+        </div>
+        
+        <script>
+            // ---------------------------------------------------------
+            // 1. 색상 변경 관련 함수 (유지)
+            // ---------------------------------------------------------
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        
+            function changeTextColors() {
+                const textLeft = document.getElementById('text-left');
+                const textRight = document.getElementById('text-right');
+        
+                if (textLeft) {
+                    textLeft.style.color = getRandomColor();
+                }
+                if (textRight) {
+                    textRight.style.color = getRandomColor();
+                }
+            }
+        
+            // ---------------------------------------------------------
+            // 2. 초기화 함수 통합 및 실행
+            // ---------------------------------------------------------
+            function initializePage() {
+                // A. 텍스트 색상 변경 시작
+                // 즉시 한 번 실행 후 0.5초마다 반복
+                changeTextColors(); 
+                setInterval(changeTextColors, 500);
+                
+                // B. 되돌아가기 버튼 생성
+                const backButtonContainer = document.createElement('div');
+                backButtonContainer.id = 'back-button-container';
+                
+                const backButtonImage = document.createElement('img');
+                backButtonImage.src = 'images/Back.png'; 
+                backButtonImage.id = 'back-button-image';
+                
+                backButtonContainer.appendChild(backButtonImage);
+                document.body.appendChild(backButtonContainer);
+        
+                // C. 메인 창으로 돌아가는 이벤트 연결
+                backButtonContainer.addEventListener('click', () => {
+                    window.location.href = 'index.html'; 
+                });
+        
+                // D. 3초(3000ms) 후 버튼을 보이게 함
+                setTimeout(() => {
+                    backButtonContainer.classList.add('is-visible');
+                }, 3000);
+            }
+        
+            // 페이지의 DOM 구조가 완전히 로드된 후 initializePage 함수 실행
+            document.addEventListener('DOMContentLoaded', initializePage);
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,59 @@
+/* gun.css */
+
+body {
+        background-color: rgb(255, 255, 255);
+        /* 1. 가로 스크롤바 생성 방지 (이미 적용되어 있지만, 확실하게 유지) */
+        overflow-x: hidden; 
+        
+        /* 2. 세로 스크롤도 방지하여 뷰포트에 꽉 차도록 할 수도 있습니다. 
+           (요청하신 기능이 '총' 페이지이므로, 이 옵션이 적절할 수 있습니다.) */
+        /* overflow-y: hidden; */ 
+        
+        position: relative;
+        margin: 0;
+        min-height: 100vh;
+    }
+    
+    /* ⭐ [수정]: .full-width-image 스타일 조정 ⭐ */
+    .full-width-image {
+        width: 100%; /* vw 대신 %를 사용하여 부모(body)의 콘텐츠 영역에 맞춤 */
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .top-right-gun {
+        position: absolute; 
+        top: 2vw;          
+        right: 2vw;        
+        width: 15vw;       
+        height: auto;      
+        cursor: pointer;   
+    }
+    
+    .hidden {
+        /* !important를 사용하여 다른 모든 display 속성(예: full-width-image의 display: block)보다 
+          우선순위를 높여서 요소를 확실하게 숨깁니다.
+        */
+        display: none !important; 
+    }
+    
+    /* ⭐ [추가/수정]: gun.png와 Back.png의 Z-index 분리 ⭐ */
+    #gun-image {
+        z-index: 20; /* 기본 상태의 gun.png가 가장 위에 있어야 함 */
+    }
+    
+    #back-image {
+        z-index: 25; /* Back.png는 gun.png가 사라진 후에도 클릭 가능해야 하므로 더 높은 z-index */
+        width: 3%; 
+}
+    
+    #plus-image {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        z-index: 15; 
+        width: 100%; 
+        height: auto;
+    }
